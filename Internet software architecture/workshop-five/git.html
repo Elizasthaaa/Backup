@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GitHub Repositories</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h1>GitHub Repositories</h1>
+	<label for="username">Enter GitHub username:</label>
+	<input type="text" id="username" name="username">
+	<button onclick="getRepositories()">Search</button>
+	<ul id="repositories"></ul>
+
+	<script>
+		function getRepositories() {
+			const username = document.getElementById("username").value;
+			const url = `https://api.github.com/users/${username}/repos`;
+
+			fetch(url)
+				.then(response => response.json())
+				.then(data => {
+					const repositories = document.getElementById("repositories");
+					repositories.innerHTML = "";
+
+					data.forEach(repo => {
+						const li = document.createElement("li");
+						const a = document.createElement("a");
+						a.textContent = repo.name;
+						a.href = repo.html_url;
+						li.appendChild(a);
+						repositories.appendChild(li);
+					});
+				})
+				.catch(error => {
+					console.error(error);
+					alert("There was an error retrieving the repositories.");
+				});
+		}
+	</script>
+</body>
+</html>

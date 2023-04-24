@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        .title {
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+            padding-left: 190px;
+            font-size: 50px;
+
+        }
+
+
+        body {
+            height: 100vh;
+            background-image: url(11.png);
+            background-size: cover;
+            height: 120vh;
+            width: auto;
+
+        }
+
+        .contents{
+            text-align: center;
+            margin-top: 80px;
+            padding-right: 100px;
+            padding-left: 300px;
+            font-size: 35px;
+        
+
+        }
+
+        #gitHubUsername{
+            width: 300px;
+            height: 30px;
+            margin-top: 20px;
+
+        }
+
+        #search{
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 25px;
+  border-radius: 40px;
+  display: inline-block;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+#search:hover{
+  transform: scale(1.2);
+  background-color: #B4E4FF;
+}
+
+
+#repositories{
+    text-align: center;
+    padding-left: 200px;
+    font-size: 20px;
+    background-color: white;
+        
+}
+
+
+    </style>
+    <title>Fetch GitHub API</title>
+</head>
+
+<body>
+    <h1 class="title">GitHub Repositories</h1>
+    <div class="contents">
+        <label for="username">Enter GitHub username:</label><br>
+        <input id="gitHubUsername" type="text"><br>
+        <button id="search" value="search" onclick="getRepositories()">Search Repositories</button>
+    </div>
+
+    <p id="repositories">
+
+    <script>
+function getRepositories() {
+  const username = document.getElementById('gitHubUsername').value;
+  fetch(`https://api.github.com/users/${username}/repos`)
+    .then((response) => response.json())
+    .then((data) => {
+      let repositoriesHTML = '';
+      data.forEach((repo) => {
+        repositoriesHTML += `<a href="${repo.html_url}">${repo.name}</a><br>`;
+      });
+      repositories.innerHTML = repositoriesHTML;
+    })
+    .catch(error => {
+      console.error(error);
+      repositories.innerHTML = `Error: ${error.message}`;
+    });
+}
+
+    </script>
+    </p>
+</body>
+
+</html>

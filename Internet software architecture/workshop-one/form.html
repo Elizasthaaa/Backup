@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+    <style>
+        
+        .topic{
+            text-align: center;
+            color: #54B435;
+            
+        }
+
+        body{
+            display: flex;
+            justify-content:center;
+            background-color: #EEEEEE;
+        }
+
+        .content-form{
+            justify-content: center;
+            max-width: 50%;
+          
+
+        }
+
+        .grid-container{
+            padding-left: 40px;
+            padding-right: 40px;
+            background-color: #ffff;
+        }
+
+        .form-contents{
+            padding: 10px 0px;
+            width: 100%;
+          
+        }
+
+        .form-input{
+            width: 100%;
+        }
+
+        .form-control{
+            width: 100%;
+            height: 60px;
+        }
+
+.btn{
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 5px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  background-color: #54B435;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.btn:hover{
+  transform: scale(1.1);
+}
+
+    </style>
+</head>
+
+<body>
+
+    <section class="content-form">
+    <div class="topic">
+        <h1>Herald College Kathkmandu Survey Form</h1>
+    </div>
+
+    <!-- box start -->
+
+    <div class=" grid-container">
+        <div class="form-input grid ">
+            <div class="form-contents"></div>
+                <label for="name">Name</label><br>
+                 <input type="text" class="form-input"  placeholder="Enter your name">
+            </div>
+
+            <div class="form-contents"></div>
+            <label for="email">E-mail</label><br>
+             <input type="text" class="form-input"  placeholder="Enter your email-address">
+       
+
+        <div class="form-contents"></div>
+        <label for="age">Age</label><br>
+         <input type="text" class="form-input"  placeholder="Enter your age">
+   
+
+    <div class="form-contents">
+    <label for="name">What option best describes you</label><br>
+     <select name="" class="form-contents">
+        <option value="Student">Student</option>
+        <option value="Lecturer">Lecturer</option>
+        <option value="Tutor">Tutor</option>
+        <option value="Staff">Staff</option>
+     </select>
+       </div>
+
+<div class="form-contents">
+    <label for="recommendation">Would you recommend Herald College Kathmandu to a friend?</label> <br>
+    <input type="radio">Yes <br>
+    <input type="radio">No <br>
+    <input type="radio">Maybe <br>
+</div>
+
+<div class="form-contents">
+    <label for="frameworks">Languages and Frameworks known(Check all that apply)</label> <br>
+    <input type="checkbox">C<br>
+    <input type="checkbox">C ++<br>
+    <input type="checkbox">C #<br>
+    <input type="checkbox">Java<br>
+    <input type="checkbox">Python<br>
+    <input type="checkbox">JavaScript<br>
+    <input type="checkbox">React<br>
+    <input type="checkbox">Angular<br>
+    <input type="checkbox">Django<br>
+    <input type="checkbox">Spring<br>
+</div>
+
+<div class="form-contents">
+<label for="comments">Any comments or suggestions</label><br>
+<textarea name="" class="form-control" id="" placeholder="Message"></textarea>
+
+
+<div class="form-contents"></div>
+<button type="submit" class="btn" >Submit</button>
+
+
+    </div>
+</div>
+</section>
+</body>
+</html>
